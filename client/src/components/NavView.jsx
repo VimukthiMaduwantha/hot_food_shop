@@ -6,11 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
-import logo from '../assets/logo.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useNavigate, } from 'react-router-dom';
 import { Button } from '@mui/material';
-import LoginView from './LoginView';
+
 
 function NavView() {
     const navigate = useNavigate();
@@ -29,11 +28,10 @@ function NavView() {
 
 
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: 'black', }}>
-            <Container maxWidth="100%">
-                <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    {/* <Link to='/home'> */}
-                    <Box sx={{ /* backgroundColor: 'blue', */ height: '42px', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: 'white', }}>
+            <Container maxWidth="100%" sx={{ /* backgroundColor: 'green', */ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Toolbar disableGutters sx={{ /* backgroundColor: 'red', */ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    <Box sx={{ /* backgroundColor: 'blue', */ height: '42px', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', width: '100%' }}>
                         <Typography
                             variant="h6"
                             noWrap
@@ -41,33 +39,29 @@ function NavView() {
                             href="/"
                             sx={{
                                 mr: 2,
-                                display: { xs: 'none', md: 'contents' },
+                                display: { xs: 'flex', md: 'contents' },
                                 flexGrow: 1,
-                                fontFamily: 'Gideon Roman, cursive',
                                 fontWeight: 700,
                                 letterSpacing: '.1rem',
-                                color: 'white',
+                                color: 'black',
                                 textDecoration: 'none',
                                 textTransform: 'uppercase',
                                 marginLeft: '5px',
-
-                            }}
-                        >
-                            Black Rose Flora
+                                fontFamily: 'Russo One, sans-serif',
+                                fontSize: '25px'
+                            }}>
+                            Hot Food
                         </Typography>
                     </Box>
-
-
-
-                    <Box sx={{ flexGrow: 0,/*  backgroundColor: 'red'  */ }}>
-                        <Tooltip title="Cart">
-                            <IconButton /* onClick={handleOpenUserMenu}  */ sx={{ p: 0 }}>
-                                <ShoppingCartIcon sx={{ color: 'white' }} />
-                            </IconButton>
-                        </Tooltip>
-                        <Button sx={{ color: 'white', marginLeft: '10px' }} onClick={loginView}>Login</Button>
-                    </Box>
                 </Toolbar>
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Tooltip title="Cart">
+                        <IconButton /* onClick={handleOpenUserMenu}  */ sx={{ p: 0 }}>
+                            <ShoppingCartIcon sx={{ color: 'black' }} />
+                        </IconButton>
+                    </Tooltip>
+                    <Button sx={{ color: 'black', marginLeft: '10px' }} onClick={loginView}>Login</Button>
+                </Box>
             </Container>
         </AppBar >
     );
